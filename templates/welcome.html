@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sign</title>
+    <style>
+        div{
+
+            position :absolute;
+            right: 10px;
+            top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button type="button" onclick="location.href='{% url 'logout' %}'">LOG OUT</button>
+    </div>
+
+    Welcome {{e}}<br>
+    {{this_month}}월
+
+    <br><br>
+    
+    <button type="button" onclick="location.href='{% url 'create' %}' ">가접수 하기</button>
+    <button type="button" onclick="location.href='{% url 'check' %}' ">Check Report</button> 
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <td>날짜</td><td>학생명</td><td>예비순번1</td><td>예비순번2</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% if lists%}
+        
+            {%for date, or1, or2 in lists%}
+                <tr>
+                    <td>{{date}}</td><td></td><td>{{or1}}</td><td>{{or2}}</td>    
+                </tr>    
+            {% endfor %}
+        {% endif%}  
+        </tbody>
+
+    </table>
+
+        
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sign</title>
+        <style>
+            div{
+                position :absolute;
+                right: 10px;
+                top: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <button type="button" onclick="location.href='{% url 'logout' %}'">LOG OUT</button>
+        </div>
+        <h2>스키 캠프 가접수</h2>
+        <form action="/post_create/" method="POST">
+            {%csrf_token%}
+            1순위 원하시는 날짜 :
+            <input type="date" name="date"><br><br>
+           예상 인원수:
+            <input type="text" name="people"></textarea>
+            <br><br>
+            <input type="submit" value="수정">
+            <button type="button" onclick="location.href=">삭제</button>
+            
+            
+        </form>
+
+    </body>
+
+</html>

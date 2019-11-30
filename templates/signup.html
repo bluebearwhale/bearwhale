@@ -1,0 +1,32 @@
+{%if mssg %}
+<script>
+    alert('{{ mssg }}');
+</script>
+{% endif %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sign</title>
+    </head>
+    <body>
+        <form action="/postsignup/" method="POST">
+            {%csrf_token%}
+            이름:
+            <input type="text" name="name"><br><br>
+            아이 이름:
+            <input type="text" name="chd_name""><br><br>
+            핸드폰 번호:
+            <input type="text" name="phone_num"><br><br>
+            Email:
+            <input type="email" name="email"><br><br>
+            비밀번호:
+            <input type="password" name="pass">6자 이상으로 설정해주세요<br><br>
+            <input type="submit" value="SignUp">
+
+            
+        </form>
+
+    </body>
+
+</html>
